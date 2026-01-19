@@ -122,6 +122,8 @@
       margin-right: 0; 
     }
   </style>
+  <script src="guqatar_files/libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="guqatar_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -140,10 +142,6 @@ Olgahan Çat (olgahan@brown.edu)
 </div>
 
 </section>
-<section class="slide level2 center">
-
-<p><img data-src="first_slide.png" style="width:100vw; height:100vh; object-fit:contain; display:block; margin:0;"></p>
-</section>
 <section id="goals" class="slide level2 center">
 <h2>Goals</h2>
 <ul>
@@ -157,49 +155,68 @@ Olgahan Çat (olgahan@brown.edu)
 <h2>Why statistical reasoning matters?</h2>
 <ul>
 <li class="fragment"><strong>Intellectual skill:</strong> Reason carefully about patterns in human behavior</li>
-<li class="fragment"><strong>Academia:</strong> Read, interpret, and contribute to social science research</li>
 <li class="fragment"><strong>Policy:</strong> Evaluate evidence behind decisions that affect society</li>
 <li class="fragment"><strong>Private sector &amp; life:</strong> Use data responsibly to anticipate outcomes</li>
+<li class="fragment"><strong>Academia:</strong> Read, interpret, and contribute to social science research</li>
+</ul>
+</section>
+<section id="proportion-of-political-science-papers-by-method" class="slide level2 center">
+<h2>Proportion of Political Science papers by method</h2>
+<p><img data-src="psci.png" style="width:100.0%"> <em>Source: Carolina Torreblanca</em></p>
+</section>
+<section id="proportion-of-political-science-papers-by-method-1" class="slide level2 center">
+<h2>Proportion of Political Science papers by method</h2>
+<ul>
+<li class="fragment">Does not mean quant is better</li>
+<li class="fragment">Does not mean you have to do quant work</li>
+<li class="fragment">But probably means you want to learn some stats to engage with the discipline</li>
 </ul>
 </section>
 <section id="according-to-data" class="slide level2 center">
 <h2>“According to data…”</h2>
-<h3 id="does-data-speak">Does data speak?</h3>
+<h3 id="do-data-speak">Do data speak?</h3>
 <div class="columns">
 <div class="column" style="width:60%;">
+<!-- - Common claims:  -->
+<!--   - "The **data says** X causes Y" -->
+<!--   - "**According to data**, A is better than B" -->
 <ul>
-<li class="fragment">Common claims:
-<ul>
-<li class="fragment">“The <strong>data says</strong> X causes Y”</li>
-<li class="fragment">“<strong>According to data</strong>, A is better than B”</li>
-</ul></li>
 <li class="fragment">Implied: data reveals objective truth</li>
 <li class="fragment">Reality: data <strong>requires interpretation</strong></li>
 </ul>
 </div><div class="column center" style="width:40%;">
-<p><img data-src="s1.png" style="width:100.0%"></p>
+<p><img data-src="wp.png" style="width:100.0%"> <img data-src="s1.png" style="width:100.0%"></p>
 </div></div>
 </section>
 <section id="variables" class="slide level2 center">
 <h2>Variables</h2>
 <ul>
-<li class="fragment">Characteristics that vary</li>
+<li class="fragment"><p>Characteristics that vary</p></li>
+<li class="fragment"><p><img data-src="s2.png" style="width:91.0%"></p></li>
 </ul>
-
-<img data-src="s2.png" style="width:100.0%" class="r-stretch"></section>
+</section>
 <section id="types-of-variables" class="slide level2 center">
 <h2>Types of Variables</h2>
 <ul>
 <li class="fragment">Nominal/categorical: <strong>Cannot be ordered</strong>
 <ul>
-<li class="fragment">Region</li>
+<li class="fragment">Region, conflict types,</li>
 </ul></li>
 <li class="fragment">Ordinal: <strong>Ordered</strong>
 <ul>
-<li class="fragment">Very liberal &lt; Liberal &lt; Moderate &lt; Conservative &lt; Very conservative -Numerical: Ordered + <strong>equidistant</strong></li>
+<li class="fragment">Liberal &lt; Moderate &lt; Conservative</li>
+</ul></li>
+<li class="fragment">Numerical: Ordered + <strong>equidistant</strong>
+<ul>
 <li class="fragment">Age, GDP, number of casualties</li>
 </ul></li>
 </ul>
+</section>
+<section id="political-regimes" class="slide level2 center">
+<h2>Political Regimes</h2>
+<h3 id="interactive-map">Interactive Map</h3>
+<iframe src="https://ourworldindata.org/grapher/political-regime?tab=map" loading="lazy" style="width:100%; height:600px; border:0;" allow="web-share; clipboard-write">
+</iframe>
 </section>
 <section id="practice" class="slide level2 center">
 <h2>Practice</h2>
@@ -211,31 +228,104 @@ Olgahan Çat (olgahan@brown.edu)
 <li class="fragment">3: Liberal democracy – Free and fair elections guaranteed</li>
 </ul>
 </section>
-<section id="political-regimes" class="slide level2 center">
-<h2>Political Regimes</h2>
-<h3 id="interactive-map">Interactive Map</h3>
-<iframe src="https://ourworldindata.org/grapher/political-regime?tab=map" loading="lazy" style="width:100%; height:600px; border:0;" allow="web-share; clipboard-write">
-</iframe>
-</section>
 <section id="descriptive-statistics" class="slide level2 center">
 <h2>Descriptive Statistics</h2>
 <h3 id="summarizing-patterns-categorical-data">Summarizing Patterns: Categorical data</h3>
-<div class="columns">
-<div class="column" style="width:60%;">
 <ul>
 <li class="fragment">Counts / frequencies: How many observations fall in each category.</li>
 <li class="fragment">Percentages / proportions: Useful to compare groups.</li>
 <li class="fragment">Mode: The most common category</li>
 </ul>
-</div><div class="column center" style="width:40%;">
-<p><img data-src="sm.png" style="width:40.0%"> <em>Source: qatarcars</em></p>
-</div></div>
+</section>
+<section id="descriptive-statistics-categorical-variables" class="slide level2 center">
+<h2>Descriptive Statistics: Categorical variables</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 18px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>Top Categories for Qatar Cars Variables</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Variable</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Category</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Count</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td rowspan="4" style="text-align: left; vertical-align: top !important;">make</td>
+<td style="text-align: left;">Toyota</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">10.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BMW</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">5.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Kia</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">5.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mercedes</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">5.1</td>
+</tr>
+<tr class="odd">
+<td rowspan="4" style="text-align: left; vertical-align: top !important;">origin</td>
+<td style="text-align: left;">Japan</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">27.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Germany</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">20.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">PR China</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">16.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UK</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">11.1</td>
+</tr>
+<tr class="odd">
+<td rowspan="4" style="text-align: left; vertical-align: top !important;">type</td>
+<td style="text-align: left;">SUV</td>
+<td style="text-align: right;">49</td>
+<td style="text-align: right;">49.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sedan</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">30.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Coupe</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">13.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hatchback</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">7.1</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p><em>Data source: https://github.com/profmusgrave/qatarcars</em></p>
 </section>
 <section id="descriptive-statistics-1" class="slide level2 center">
 <h2>Descriptive Statistics</h2>
 <h3 id="summarizing-patterns-numerical-data">Summarizing Patterns: Numerical data</h3>
-<div class="columns">
-<div class="column" style="width:60%;">
 <ul>
 <li class="fragment">Measures of central tendency:
 <ul>
@@ -249,27 +339,170 @@ Olgahan Çat (olgahan@brown.edu)
 <li class="fragment">Standard deviation</li>
 </ul></li>
 </ul>
-</div><div class="column center" style="width:40%;">
-<p><img data-src="sm2.png" style="width:40.0%"> <em>Source: qatarcars</em></p>
-</div></div>
 </section>
-<section id="predictive-reasoning" class="slide level2 center">
-<h2>Predictive Reasoning</h2>
+<section id="descriptive-statistics-numerical-variables" class="slide level2 center">
+<h2>Descriptive Statistics: Numerical variables</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table caption-top" data-quarto-postprocess="true" style="font-size: 20px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>Descriptive Statistics for Qatar Cars Variables</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Variable</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">mean</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">sd</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">min</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">length</td>
+<td style="text-align: left;">4.71</td>
+<td style="text-align: left;">0.30</td>
+<td style="text-align: left;">3.80</td>
+<td style="text-align: left;">5.47</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">width</td>
+<td style="text-align: left;">1.93</td>
+<td style="text-align: left;">0.30</td>
+<td style="text-align: left;">1.67</td>
+<td style="text-align: left;">4.63</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">height</td>
+<td style="text-align: left;">1.58</td>
+<td style="text-align: left;">0.20</td>
+<td style="text-align: left;">1.12</td>
+<td style="text-align: left;">2.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">seating</td>
+<td style="text-align: left;">5.04</td>
+<td style="text-align: left;">1.22</td>
+<td style="text-align: left;">2.00</td>
+<td style="text-align: left;">8.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">trunk</td>
+<td style="text-align: left;">449.80</td>
+<td style="text-align: left;">268.31</td>
+<td style="text-align: left;">0.00</td>
+<td style="text-align: left;">1233.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">economy</td>
+<td style="text-align: left;">8.91</td>
+<td style="text-align: left;">3.63</td>
+<td style="text-align: left;">1.20</td>
+<td style="text-align: left;">22.50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">horsepower</td>
+<td style="text-align: left;">329.34</td>
+<td style="text-align: left;">294.09</td>
+<td style="text-align: left;">76.00</td>
+<td style="text-align: left;">1973.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">price</td>
+<td style="text-align: left;">840909.91</td>
+<td style="text-align: left;">3632523.41</td>
+<td style="text-align: left;">37400.00</td>
+<td style="text-align: left;">33000000.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">mass</td>
+<td style="text-align: left;">1807.33</td>
+<td style="text-align: left;">462.98</td>
+<td style="text-align: left;">945.00</td>
+<td style="text-align: left;">2746.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">performance</td>
+<td style="text-align: left;">6.81</td>
+<td style="text-align: left;">2.57</td>
+<td style="text-align: left;">2.40</td>
+<td style="text-align: left;">14.00</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p><em>Data source: https://github.com/profmusgrave/qatarcars</em></p>
+</section>
+<section id="predictive-analysis" class="slide level2 center">
+<h2>Predictive Analysis</h2>
 <h3 id="can-we-forecast-outcomes">Can we forecast outcomes?</h3>
-<div class="columns">
-<div class="column" style="width:60%;">
 <ul>
 <li class="fragment">Use patterns to <strong>predict an outcome</strong></li>
 <li class="fragment">Example: <strong>Next election</strong>, would we expect a high or low turnout at a <strong>university town?</strong></li>
+</ul>
+</section>
+<section id="toy-example" class="slide level2 center">
+<h2>Toy example</h2>
+<h3 id="new-university-in-town">New university in town</h3>
+<ul>
+<li class="fragment">Suppose turnout differs by age:
+<ul>
+<li class="fragment">Young voters (18–25): <b>40%</b> turnout</li>
+</ul></li>
+<li class="fragment">Everyone else: <b>65%</b> turnout</li>
+<li class="fragment">We can roughly predict the turnout based on share of young voters in town
+<div style="width:100%; font-size:70%;">
+<!-- <p> -->
+<!--   Suppose turnout differs by age: -->
+<!--   <br> -->
+<!--   • Young voters (18–25): <b>40%</b> turnout   -->
+<!--   <br> -->
+<!--   • Everyone else: <b>65%</b> turnout -->
+<!-- </p> -->
+<p><label for="youngShare"> Share of young voters in town: <b><span id="youngLabel">20</span>%</b> </label></p>
+<p><input type="range" id="youngShare" min="0" max="60" value="20" step="5" style="width:100%;"></p>
+<p id="prediction" style="margin-top:8px;">
+</p>
+<p style="color:gray; font-size:85%;">
+<!-- This is a prediction based on composition — not a causal effect. -->
+</p>
+</div></li>
+</ul>
+<script>
+  const slider = document.getElementById("youngShare");
+  const label = document.getElementById("youngLabel");
+  const output = document.getElementById("prediction");
+
+  function update() {
+    const young = slider.value / 100;
+    const turnout = young * 40 + (1 - young) * 65;
+
+    label.innerText = slider.value;
+    output.innerText =
+      "Predicted turnout = " +
+      slider.value + "% × 40% + " +
+      (100 - slider.value) + "% × 65% = " +
+      turnout.toFixed(1) + "%";
+  }
+
+  slider.addEventListener("input", update);
+  update();
+</script>
+</section>
+<section id="predictive-analysis-1" class="slide level2 center">
+<h2>Predictive Analysis</h2>
+<h3 id="section"></h3>
+<ul>
+<li class="fragment">Widely used in <strong>private sector:</strong> credit scoring, fraud detection, demand forecasting</li>
+<li class="fragment">Also common in <strong>public policy:</strong> forecasting crime, turnout, ER visits</li>
+<li class="fragment">Often relies on more flexible, machine learning models</li>
 <li class="fragment">What if we want to know <span style="color:#8B0000;"><strong>why?</strong></span></li>
 </ul>
-</div><div class="column center" style="width:40%;">
-<p><img data-src="s4.png" style="width:100.0%"></p>
-</div></div>
 </section>
 <section id="causal-inference" class="slide level2 center">
 <h2>Causal Inference</h2>
-<h3 id="does-x-cause-y">Does X cause Y?</h3>
+<h3 id="going-beyond-associations">Going beyond associations</h3>
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
@@ -278,47 +511,517 @@ Olgahan Çat (olgahan@brown.edu)
 <li class="fragment">Causal claims are everywhere</li>
 <li class="fragment">The ultimate question:
 <ul>
-<li class="fragment"><strong>does changing X change Y</strong></li>
+<li class="fragment"><strong>does changing X change Y?</strong></li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:40%;">
 <p><img data-src="s5.png" style="width:80.0%"></p>
 </div></div>
 </section>
-<section id="do-democracy-promotion-programs-reduce-protests" class="slide level2 center">
-<h2>Do democracy promotion programs reduce protests?</h2>
-<p><img data-src="s6.png" style="width:40%; max-height:200px; display:block; margin:auto;"></p>
+<section id="a-toy-example" class="slide level2 center">
+<h2>A Toy Example</h2>
+<h3 id="foreign-aid-and-political-stability">Foreign Aid and Political Stability</h3>
 <ul>
-<li class="fragment">Average protests if received program: (2+1+3)/3 = 2 → <span style="color:#000080;"><strong>fewer protests</strong></span></li>
-<li class="fragment">Average protests if no program: (5+4+6)/3 = 5 → <span style="color:#8B0000;"><strong>more protests</strong></span></li>
-<li class="fragment">what if we knew <strong>both worlds?</strong></li>
+<li class="fragment"><p>Some countries receive <strong>foreign aid</strong></p></li>
+<li class="fragment"><p>Others do <strong>not</strong></p></li>
+<li class="fragment"><p>Outcome: <strong>number of anti-government protests</strong></p></li>
+<li class="fragment"><p><strong>Question:</strong></p>
+<ul>
+<li class="fragment">Does foreign aid reduce political unrest?</li>
+</ul></li>
 </ul>
+</section>
+<section id="a-naive-comparison" class="slide level2 center">
+<h2>A Naive Comparison</h2>
+<h3 id="treated-vs.-untreated-countries">Treated vs.&nbsp;Untreated Countries</h3>
+<div style="width:auto; min-width:600px;">
+<p><button id="slide1_reveal" style="font-size:0%; margin-bottom:5px;">🔁 Reveal counterfactuals</button></p>
+<table border="1" cellpadding="2" cellspacing="0" style="font-size:55%; border-collapse: collapse; table-layout: fixed; width:100%;">
+<thead>
+<tr>
+<th style="padding:2px; width:60px;">
+Country
+</th>
+<th style="padding:2px; width:80px;">
+Aid status
+</th>
+<th style="padding:2px; width:80px;">
+Observed protests
+</th>
+<th id="slide1_cf_aid_header" style="color:#5b7c99; padding:2px; width:90px; visibility:hidden;">
+Protests if received aid
+</th>
+<th id="slide1_cf_noaid_header" style="color:darkred; padding:2px; width:90px; visibility:hidden;">
+Protests if no aid
+</th>
+<th id="slide1_eff_header" style="color:darkgreen; padding:2px; width:90px; visibility:hidden;">
+Actual effect of aid
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+A
+</td>
+<td id="slide1_A_status">
+</td>
+<td id="slide1_A_obs">
+</td>
+<td id="slide1_A_withAid" style="visibility:hidden">
+</td>
+<td id="slide1_A_noAid" style="visibility:hidden">
+</td>
+<td id="slide1_A_eff" style="visibility:hidden">
+</td>
+</tr>
+<tr>
+<td>
+B
+</td>
+<td id="slide1_B_status">
+</td>
+<td id="slide1_B_obs">
+</td>
+<td id="slide1_B_withAid" style="visibility:hidden">
+</td>
+<td id="slide1_B_noAid" style="visibility:hidden">
+</td>
+<td id="slide1_B_eff" style="visibility:hidden">
+</td>
+</tr>
+<tr>
+<td>
+C
+</td>
+<td id="slide1_C_status">
+</td>
+<td id="slide1_C_obs">
+</td>
+<td id="slide1_C_withAid" style="visibility:hidden">
+</td>
+<td id="slide1_C_noAid" style="visibility:hidden">
+</td>
+<td id="slide1_C_eff" style="visibility:hidden">
+</td>
+</tr>
+<tr>
+<td>
+D
+</td>
+<td id="slide1_D_status">
+</td>
+<td id="slide1_D_obs">
+</td>
+<td id="slide1_D_withAid" style="visibility:hidden">
+</td>
+<td id="slide1_D_noAid" style="visibility:hidden">
+</td>
+<td id="slide1_D_eff" style="visibility:hidden">
+</td>
+</tr>
+<tr>
+<td>
+E
+</td>
+<td id="slide1_E_status">
+</td>
+<td id="slide1_E_obs">
+</td>
+<td id="slide1_E_withAid" style="visibility:hidden">
+</td>
+<td id="slide1_E_noAid" style="visibility:hidden">
+</td>
+<td id="slide1_E_eff" style="visibility:hidden">
+</td>
+</tr>
+<tr>
+<td>
+F
+</td>
+<td id="slide1_F_status">
+</td>
+<td id="slide1_F_obs">
+</td>
+<td id="slide1_F_withAid" style="visibility:hidden">
+</td>
+<td id="slide1_F_noAid" style="visibility:hidden">
+</td>
+<td id="slide1_F_eff" style="visibility:hidden">
+</td>
+</tr>
+</tbody>
+</table>
+<p id="slide1_naive" style="font-size:75%; margin-top:5px;">
+</p>
+<p id="slide1_true" style="font-size:75%; margin-top:2px;">
+</p>
+</div>
+<script>
+  const slide1_data = {
+    A: {observed: 5, aidStatus: "Received Aid", withAid: 5, noAid: 7},
+    B: {observed: 4, aidStatus: "No Aid",       withAid: 3, noAid: 4},
+    C: {observed: 3, aidStatus: "No Aid",       withAid: 0, noAid: 3},
+    D: {observed: 6, aidStatus: "Received Aid", withAid: 6, noAid: 8},
+    E: {observed: 4, aidStatus: "No Aid",       withAid: 1, noAid: 4},
+    F: {observed: 7, aidStatus: "Received Aid", withAid: 7, noAid: 8}
+  };
+
+  let slide1_revealed = false;
+
+  function slide1_update() {
+    let naiveAidSum = 0, naiveAidCount = 0;
+    let naiveNoAidSum = 0, naiveNoAidCount = 0;
+    let trueSum = 0;
+    const countries = ["A","B","C","D","E","F"];
+
+    countries.forEach(c => {
+      const row = slide1_data[c];
+      const obsEl = document.getElementById("slide1_"+c+"_obs");
+      const statusEl = document.getElementById("slide1_"+c+"_status");
+
+      // Aid status color
+      statusEl.innerText = row.aidStatus;
+      statusEl.style.color = row.aidStatus==="Received Aid" ? "darkgreen" : "darkred";
+
+      // Observed value always matches realized potential outcome
+      obsEl.innerText = row.observed;
+      obsEl.style.color = "black";
+
+      // For naive diff calculation
+      if(row.aidStatus === "Received Aid"){
+        naiveAidSum += row.observed; naiveAidCount++;
+      } else {
+        naiveNoAidSum += row.observed; naiveNoAidCount++;
+      }
+
+      if(slide1_revealed){
+        ["withAid","noAid","eff"].forEach(id=>{
+          document.getElementById("slide1_"+c+"_"+id).style.visibility = "visible";
+          document.getElementById("slide1_"+c+"_"+id).style.color = "black";
+        });
+        ["slide1_cf_aid_header","slide1_cf_noaid_header","slide1_eff_header"].forEach(id=>{
+          document.getElementById(id).style.visibility = "visible";
+        });
+
+        // Only show potential outcome if different from observed
+        document.getElementById("slide1_"+c+"_withAid").innerText = row.withAid !== row.observed ? row.withAid : "";
+        document.getElementById("slide1_"+c+"_noAid").innerText = row.noAid !== row.observed ? row.noAid : "";
+
+        document.getElementById("slide1_"+c+"_eff").innerText = row.withAid - row.noAid;
+
+        trueSum += row.withAid - row.noAid;
+      } else {
+        ["withAid","noAid","eff"].forEach(id=>{
+          document.getElementById("slide1_"+c+"_"+id).style.visibility = "hidden";
+        });
+        ["slide1_cf_aid_header","slide1_cf_noaid_header","slide1_eff_header"].forEach(id=>{
+          document.getElementById(id).style.visibility = "hidden";
+        });
+      }
+    });
+
+    const naiveDiff = (naiveAidSum/naiveAidCount - naiveNoAidSum/naiveNoAidCount).toFixed(2);
+    document.getElementById("slide1_naive").innerText = "Naive difference (avg aid - avg no aid) = (5+6+7)/3 - (3+4+4)/3 = " + naiveDiff;
+    document.getElementById("slide1_true").innerText = slide1_revealed ? "True average effect of aid = (-2-1-3-2-3-1)/6 = " + (trueSum/6).toFixed(2) : "";
+  }
+
+  document.getElementById("slide1_reveal").addEventListener("click", ()=>{
+    slide1_revealed = !slide1_revealed;
+    document.getElementById("slide1_reveal").innerText = slide1_revealed ? "🔒 Hide counterfactuals" : "🔁 Reveal counterfactuals";
+    slide1_update();
+  });
+
+  slide1_update();
+</script>
+</section>
+<section id="a-naive-comparison-1" class="slide level2 center">
+<h2>A Naive Comparison</h2>
+<h3 id="treated-vs.-untreated-countries-1">Treated vs.&nbsp;Untreated Countries</h3>
+<ul>
+<li class="fragment"><strong>Naive conclusion:</strong>
+<ul>
+<li class="fragment">Foreign aid increases protests</li>
+</ul></li>
+<li class="fragment">⚠️ But should we believe this?</li>
+</ul>
+</section>
+<section id="what-might-be-going-wrong" class="slide level2 center">
+<h2>What Might Be Going Wrong?</h2>
+<h3 id="aid-is-not-random">Aid Is Not Random</h3>
+<ul>
+<li class="fragment"><p>Foreign aid is often sent to:</p>
+<ul>
+<li class="fragment">Politically unstable countries</li>
+<li class="fragment">Countries already experiencing unrest</li>
+</ul></li>
+<li class="fragment"><p>These countries would likely have <strong>more protests anyway</strong></p></li>
+<li class="fragment"><p>We are comparing <strong>different kinds of countries</strong>.</p></li>
+</ul>
+</section>
+<section id="selection-bias" class="slide level2 center">
+<h2>Selection Bias</h2>
+<h3 id="when-comparison-is-misleading">When Comparison Is Misleading</h3>
+<ul>
+<li class="fragment">Countries receiving aid are different <em>before</em> aid</li>
+<li class="fragment">Instability affects:
+<ul>
+<li class="fragment">Whether aid is given</li>
+<li class="fragment">How many protests occur</li>
+</ul></li>
+<li class="fragment">So the difference we see may <strong>not be caused by aid</strong>.</li>
+</ul>
+<!-- ## The Core Problem -->
+<!-- ### We Don't See Both Worlds -->
+<!-- For any single country: -->
+<!-- - We see what happens **with aid** -->
+<!-- - Or what happens **without aid** -->
+<!-- But not both. -->
+<!-- One outcome is **missing**. -->
+<!-- --- -->
+</section>
+<section id="counterfactual-thinking" class="slide level2 center">
+<h2>Counterfactual Thinking</h2>
+<h3 id="the-missing-comparison">The Missing Comparison</h3>
+<ul>
+<li class="fragment">The <strong>counterfactual</strong> asks:
+<ul>
+<li class="fragment"><em>What would have happened <strong>if X did not change/did not take place?</strong></em></li>
+</ul></li>
+<li class="fragment">In this example:
+<ul>
+<li class="fragment">A country received aid</li>
+<li class="fragment">Counterfactual: <strong><em>What if it had not?</em></strong></li>
+</ul></li>
+</ul>
+<!-- - Causal inference is about reasoning with these missing outcomes. -->
 </section>
 <section id="counterfactuals" class="slide level2 center">
 <h2>Counterfactuals</h2>
-<h3 id="what-would-y-be-if-x-did-not-changetake-place">What would Y be if X did not change/take place?</h3>
+<h3 id="hypothetical-research-questions">Hypothetical research questions</h3>
+<!-- - If Trump did not win 2024 elections, would Maduro still be in power?  -->
 <ul>
-<li class="fragment">If Trump did not win 2024 elections, would Maduro still be in power?</li>
+<li class="fragment">Effect of civil war on a country’s economic growth</li>
+<li class="fragment">Whether mailers affect voting turnout or not</li>
+<li class="fragment">How EU ascension impacts a country’s trade imbalance</li>
 <li class="fragment">If it wasn’t for Qatar, would <strong>Messi ever win the World Cup?</strong></li>
-<li class="fragment"></li>
-<li class="fragment"></li>
 </ul>
 </section>
-<section id="potential-outcomes-counterfactuals" class="slide level2 center">
-<h2>Potential Outcomes &amp; Counterfactuals</h2>
-<p><img data-src="s7.png" style="width:50%; max-height:200px; display:block; margin:auto;"></p>
+<section id="interactive-intuition" class="slide level2 center">
+<h2>Interactive Intuition</h2>
+<h3 id="toggle-between-worlds">Toggle Between Worlds</h3>
 <ul>
-<li class="fragment">Going back to the example, <strong>we do not know the counterfactuals</strong>.</li>
-<li class="fragment">But <strong>let’s assume</strong> we do know them…</li>
+<li class="fragment">Imagine switching between:
+<ul>
+<li class="fragment">A world <strong>with aid</strong></li>
+<li class="fragment">A world <strong>without aid</strong></li>
+</ul></li>
+<li class="fragment">This is the core idea behind causal inference.</li>
 </ul>
 </section>
-<section id="potential-outcomes-counterfactuals-1" class="slide level2 center">
-<h2>Potential Outcomes &amp; Counterfactuals</h2>
-<p><img data-src="s8.png" style="width:50%; max-height:200px; display:block; margin:auto;"></p>
-<ul>
-<li class="fragment">Average effect for countries that received program: (2+1+0)/3 = 1</li>
-<li class="fragment">Average effect for countries that did not receive program: (1+1+1)/3 = 1</li>
-</ul>
+<section id="interactive-intuition-1" class="slide level2 center">
+<h2>Interactive Intuition</h2>
+<h3 id="toggle-between-worlds-1">Toggle Between Worlds</h3>
+<div style="width:auto; min-width:600px;">
+<p><button id="slide2_reveal" style="font-size:50%; margin-bottom:5px;">🔁 Reveal counterfactuals</button></p>
+<table border="1" cellpadding="2" cellspacing="0" style="font-size:55%; border-collapse: collapse; table-layout: fixed; width:100%;">
+<thead>
+<tr>
+<th style="padding:2px; width:60px;">
+Country
+</th>
+<th style="padding:2px; width:80px;">
+Aid status
+</th>
+<th style="padding:2px; width:80px;">
+Observed protests
+</th>
+<th id="slide2_cf_aid_header" style="color:#5b7c99; padding:2px; width:90px; visibility:hidden;">
+Protests if received aid
+</th>
+<th id="slide2_cf_noaid_header" style="color:darkred; padding:2px; width:90px; visibility:hidden;">
+Protests if no aid
+</th>
+<th id="slide2_eff_header" style="color:darkgreen; padding:2px; width:90px; visibility:hidden;">
+Actual effect of aid
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+A
+</td>
+<td id="slide2_A_status">
+</td>
+<td id="slide2_A_obs">
+</td>
+<td id="slide2_A_withAid" style="visibility:hidden">
+</td>
+<td id="slide2_A_noAid" style="visibility:hidden">
+</td>
+<td id="slide2_A_eff" style="visibility:hidden">
+</td>
+</tr>
+<tr>
+<td>
+B
+</td>
+<td id="slide2_B_status">
+</td>
+<td id="slide2_B_obs">
+</td>
+<td id="slide2_B_withAid" style="visibility:hidden">
+</td>
+<td id="slide2_B_noAid" style="visibility:hidden">
+</td>
+<td id="slide2_B_eff" style="visibility:hidden">
+</td>
+</tr>
+<tr>
+<td>
+C
+</td>
+<td id="slide2_C_status">
+</td>
+<td id="slide2_C_obs">
+</td>
+<td id="slide2_C_withAid" style="visibility:hidden">
+</td>
+<td id="slide2_C_noAid" style="visibility:hidden">
+</td>
+<td id="slide2_C_eff" style="visibility:hidden">
+</td>
+</tr>
+<tr>
+<td>
+D
+</td>
+<td id="slide2_D_status">
+</td>
+<td id="slide2_D_obs">
+</td>
+<td id="slide2_D_withAid" style="visibility:hidden">
+</td>
+<td id="slide2_D_noAid" style="visibility:hidden">
+</td>
+<td id="slide2_D_eff" style="visibility:hidden">
+</td>
+</tr>
+<tr>
+<td>
+E
+</td>
+<td id="slide2_E_status">
+</td>
+<td id="slide2_E_obs">
+</td>
+<td id="slide2_E_withAid" style="visibility:hidden">
+</td>
+<td id="slide2_E_noAid" style="visibility:hidden">
+</td>
+<td id="slide2_E_eff" style="visibility:hidden">
+</td>
+</tr>
+<tr>
+<td>
+F
+</td>
+<td id="slide2_F_status">
+</td>
+<td id="slide2_F_obs">
+</td>
+<td id="slide2_F_withAid" style="visibility:hidden">
+</td>
+<td id="slide2_F_noAid" style="visibility:hidden">
+</td>
+<td id="slide2_F_eff" style="visibility:hidden">
+</td>
+</tr>
+</tbody>
+</table>
+<p id="slide2_naive" style="font-size:75%; margin-top:5px;">
+</p>
+<p id="slide2_true" style="font-size:75%; margin-top:2px;">
+</p>
+</div>
+<script>
+  const slide2_data = {
+    A: {observed: 5, aidStatus: "Received Aid", withAid: 5, noAid: 7},
+    B: {observed: 4, aidStatus: "No Aid",       withAid: 3, noAid: 4},
+    C: {observed: 3, aidStatus: "No Aid",       withAid: 0, noAid: 3},
+    D: {observed: 6, aidStatus: "Received Aid", withAid: 6, noAid: 8},
+    E: {observed: 4, aidStatus: "No Aid",       withAid: 1, noAid: 4},
+    F: {observed: 7, aidStatus: "Received Aid", withAid: 7, noAid: 8}
+  };
+
+  let slide2_revealed = false;
+
+  function slide2_update() {
+    let naiveAidSum = 0, naiveAidCount = 0;
+    let naiveNoAidSum = 0, naiveNoAidCount = 0;
+    let trueSum = 0;
+    const countries = ["A","B","C","D","E","F"];
+
+    countries.forEach(c => {
+      const row = slide2_data[c];
+      const obsEl = document.getElementById("slide2_"+c+"_obs");
+      const statusEl = document.getElementById("slide2_"+c+"_status");
+
+      // Aid status color
+      statusEl.innerText = row.aidStatus;
+      statusEl.style.color = row.aidStatus==="Received Aid" ? "darkgreen" : "darkred";
+
+      // Observed value always matches realized potential outcome
+      obsEl.innerText = row.observed;
+      obsEl.style.color = "black";
+
+      // For naive diff calculation
+      if(row.aidStatus === "Received Aid"){
+        naiveAidSum += row.observed; naiveAidCount++;
+      } else {
+        naiveNoAidSum += row.observed; naiveNoAidCount++;
+      }
+
+      if(slide2_revealed){
+        ["withAid","noAid","eff"].forEach(id=>{
+          document.getElementById("slide2_"+c+"_"+id).style.visibility = "visible";
+          document.getElementById("slide2_"+c+"_"+id).style.color = "black";
+        });
+        ["slide2_cf_aid_header","slide2_cf_noaid_header","slide2_eff_header"].forEach(id=>{
+          document.getElementById(id).style.visibility = "visible";
+        });
+
+        // Only show potential outcome if different from observed
+        document.getElementById("slide2_"+c+"_withAid").innerText = row.withAid !== row.observed ? row.withAid : "";
+        document.getElementById("slide2_"+c+"_noAid").innerText = row.noAid !== row.observed ? row.noAid : "";
+
+        document.getElementById("slide2_"+c+"_eff").innerText = row.withAid - row.noAid;
+
+        trueSum += row.withAid - row.noAid;
+      } else {
+        ["withAid","noAid","eff"].forEach(id=>{
+          document.getElementById("slide2_"+c+"_"+id).style.visibility = "hidden";
+        });
+        ["slide2_cf_aid_header","slide2_cf_noaid_header","slide2_eff_header"].forEach(id=>{
+          document.getElementById(id).style.visibility = "hidden";
+        });
+      }
+    });
+
+    const naiveDiff = (naiveAidSum/naiveAidCount - naiveNoAidSum/naiveNoAidCount).toFixed(2);
+    document.getElementById("slide2_naive").innerText = "Naive difference (avg aid - avg no aid) = (5+6+7)/3 - (3+4+4)/3 = " + naiveDiff;
+    document.getElementById("slide2_true").innerText = slide2_revealed ? "True average effect of aid = (-2-1-3-2-3-1)/6 = " + (trueSum/6).toFixed(2) : "";
+  }
+
+  document.getElementById("slide2_reveal").addEventListener("click", ()=>{
+    slide2_revealed = !slide2_revealed;
+    document.getElementById("slide2_reveal").innerText = slide2_revealed ? "🔒 Hide counterfactuals" : "🔁 Reveal counterfactuals";
+    slide2_update();
+  });
+
+  slide2_update();
+</script>
 </section>
 <section id="causal-inference-1" class="slide level2 center">
 <h2>Causal Inference</h2>
@@ -331,19 +1034,11 @@ Olgahan Çat (olgahan@brown.edu)
 <li class="fragment">Without counterfactuals, it is difficult to make causal claims</li>
 </ul>
 </section>
-<section id="section" class="slide level2 center">
-<h2></h2>
-<div style="display:flex; justify-content:center; align-items:center; height:100%;">
-<h1 style="font-size:3em; text-align:center;">
-<span style="color:#000080;"><strong>How do we detect counterfactuals?</strong></span>
-</h1>
-</div>
-</section>
 <section id="section-1" class="slide level2 center">
 <h2></h2>
 <div style="display:flex; justify-content:center; align-items:center; height:100%;">
 <h1 style="font-size:3em; text-align:center;">
-<span style="color:#000080;"><strong>Bad news:</strong></span> <span style="color:#8B0000;"><strong>we can’t</strong></span>
+<span style="color:#000080;"><strong>How do we detect counterfactuals?</strong></span>
 </h1>
 </div>
 </section>
@@ -354,9 +1049,17 @@ Olgahan Çat (olgahan@brown.edu)
 <span style="color:#000080;"><strong>Bad news:</strong></span> <span style="color:#8B0000;"><strong>we can’t</strong></span>
 </h1>
 </div>
-<p><strong>Fundamental Problem of Causal Inference: We never observe the counterfactual</strong></p>
 </section>
 <section id="section-3" class="slide level2 center">
+<h2></h2>
+<div style="display:flex; justify-content:center; align-items:center; height:100%;">
+<h1 style="font-size:3em; text-align:center;">
+<span style="color:#000080;"><strong>Bad news:</strong></span> <span style="color:#8B0000;"><strong>we can’t</strong></span>
+</h1>
+</div>
+<p><strong>Fundamental Problem of Causal Inference: We never observe the counterfactual</strong></p>
+</section>
+<section id="section-4" class="slide level2 center">
 <h2></h2>
 <div style="display:flex; justify-content:center; align-items:center; height:100%;">
 <h1 style="font-size:3em; text-align:center;">
@@ -364,7 +1067,7 @@ Olgahan Çat (olgahan@brown.edu)
 </h1>
 </div>
 </section>
-<section id="section-4" class="slide level2 center">
+<section id="section-5" class="slide level2 center">
 <h2></h2>
 <div style="display:flex; justify-content:center; align-items:center; height:100%;">
 <h1 style="font-size:3em; text-align:center;">
@@ -412,16 +1115,14 @@ Olgahan Çat (olgahan@brown.edu)
 <h3 id="an-example-from-a-field-experiment-in-pakistan-cheema-et-al.-2022-1">An example from a field experiment in Pakistan (Cheema et al.&nbsp;2022)</h3>
 <p><img data-src="s9.png" style="width:50%; max-height:300px; display:block; margin:auto;"></p>
 <p><em>Figure: A random sample of households in Pakistan</em></p>
+<!-- ## Let's think about this intuitively -->
+<!-- ### An example from a field experiment in Pakistan (Cheema et al. 2022) -->
+<!-- ![](s10.png){style="width:50%; max-height:300px; display:block; margin:auto;"} -->
+<!-- *Figure: Each household has potential outcomes <span style="color:#8B0000;">**treated**</span>  and <span style="color:#000080;">**control**</span> * -->
 </section>
 <section id="lets-think-about-this-intuitively-2" class="slide level2 center">
 <h2>Let’s think about this intuitively</h2>
 <h3 id="an-example-from-a-field-experiment-in-pakistan-cheema-et-al.-2022-2">An example from a field experiment in Pakistan (Cheema et al.&nbsp;2022)</h3>
-<p><img data-src="s10.png" style="width:50%; max-height:300px; display:block; margin:auto;"></p>
-<p><em>Figure: Each household has potential outcomes <span style="color:#8B0000;"><strong>treated</strong></span> and <span style="color:#000080;"><strong>control</strong></span> </em></p>
-</section>
-<section id="lets-think-about-this-intuitively-3" class="slide level2 center">
-<h2>Let’s think about this intuitively</h2>
-<h3 id="an-example-from-a-field-experiment-in-pakistan-cheema-et-al.-2022-3">An example from a field experiment in Pakistan (Cheema et al.&nbsp;2022)</h3>
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
@@ -431,58 +1132,64 @@ Olgahan Çat (olgahan@brown.edu)
 </div><div class="column center" style="width:40%;">
 <p><img data-src="s11.png" style="width:80.0%"></p>
 </div></div>
-</section>
-<section id="lets-think-about-this-intuitively-4" class="slide level2 center">
-<h2>Let’s think about this intuitively</h2>
-<h3 id="an-example-from-a-field-experiment-in-pakistan-cheema-et-al.-2022-4">An example from a field experiment in Pakistan (Cheema et al.&nbsp;2022)</h3>
-
-<img data-src="s12.png" style="width:40.0%" class="r-stretch"><p><em>Random assignment to treated or control means <strong>we’re drawing a random sample of these potential outcomes</strong></em></p>
+<!-- ## Let's think about this intuitively -->
+<!-- ### An example from a field experiment in Pakistan (Cheema et al. 2022) -->
+<!-- ![](s12.png){width=40%} -->
+<!-- *Random assignment to treated or control means **we’re drawing a random sample of these potential outcomes*** -->
 </section>
 <section id="exercise" class="slide level2 center">
 <h2>Exercise</h2>
-<h3 id="an-example-from-a-field-experiment-in-pakistan-cheema-et-al.-2022-5">An example from a field experiment in Pakistan (Cheema et al.&nbsp;2022)</h3>
-
-<img data-src="s13.png" style="width:40.0%" class="r-stretch"></section>
+<ul>
+<li class="fragment">Asking male households how much they support women’s political participation</li>
+<li class="fragment">1: Not support at all</li>
+<li class="fragment">5: Strongly support</li>
+</ul>
+</section>
 <section id="exercise-1" class="slide level2 center">
 <h2>Exercise</h2>
-<h3 id="an-example-from-a-field-experiment-in-pakistan-cheema-et-al.-2022-6">An example from a field experiment in Pakistan (Cheema et al.&nbsp;2022)</h3>
-
-<img data-src="s14.png" style="width:40.0%" class="r-stretch"></section>
+<ul>
+<li class="fragment">Let’s assume these are the potential outcomes: <img data-src="s13.png" style="width:40.0%"></li>
+</ul>
+</section>
 <section id="exercise-2" class="slide level2 center">
 <h2>Exercise</h2>
-<h3 id="an-example-from-a-field-experiment-in-pakistan-cheema-et-al.-2022-7">An example from a field experiment in Pakistan (Cheema et al.&nbsp;2022)</h3>
-
-<img data-src="s15.png" style="width:40.0%" class="r-stretch"></section>
+<ul>
+<li class="fragment">Let’s assume these are the potential outcomes: <img data-src="s14.png" style="width:40.0%"></li>
+</ul>
+</section>
 <section id="exercise-3" class="slide level2 center">
 <h2>Exercise</h2>
-<h3 id="an-example-from-a-field-experiment-in-pakistan-cheema-et-al.-2022-8">An example from a field experiment in Pakistan (Cheema et al.&nbsp;2022)</h3>
-
+<ul>
+<li class="fragment">With random assignment, we realize the potential outcomes:
+<ul>
+<li class="fragment">Some households are realized as <strong>treated</strong></li>
+<li class="fragment">Some households are realized as <strong>control</strong> <img data-src="s15.png" style="width:40.0%"></li>
+</ul></li>
+</ul>
+</section>
+<section id="exercise-4" class="slide level2 center">
+<h2>Exercise</h2>
+<ul>
+<li class="fragment">Since we can only realize one outcome, we do not know individual causal effect</li>
+<li class="fragment">But we can <strong>estimate the average treatment effect</strong> <img data-src="s16.png" style="width:40.0%"></li>
+</ul>
 <!-- ## Experiments -->
 <!-- ### Limitations -->
 <!-- - Why not run experiments for everything? -->
 <!--   - Practicality  -->
 <!--   - Feasibility -->
 <!--   - Ethical considerations  -->
-<img data-src="s16.png" style="width:40.0%" class="r-stretch"></section>
+</section>
 <section id="experiments-1" class="slide level2 center">
 <h2>Experiments</h2>
 <h3 id="limitations">Limitations</h3>
 <ul>
 <li class="fragment">Why not run experiments for everything?
 <ul>
-<li class="fragment"><strong>Practical constraints</strong>
-<ul>
-<li class="fragment">Cost, time, scale</li>
+<li class="fragment"><strong>Practical constraints and feasibility:</strong> Cost, time, scale; cannot randomly assign many social conditions</li>
+<li class="fragment"><strong>Ethical considerations</strong>: Harm, consent, fairness</li>
 </ul></li>
-<li class="fragment"><strong>Feasibility</strong>
-<ul>
-<li class="fragment">Cannot randomly assign many social conditions</li>
-</ul></li>
-<li class="fragment"><strong>Ethical considerations</strong>
-<ul>
-<li class="fragment">Harm, consent, fairness</li>
-</ul></li>
-</ul></li>
+<li class="fragment">Of the four hypothetical research questions above (civil war, mailers, EU ascension and World Cup), only one (mailer) is amenable to randomization.</li>
 </ul>
 </section>
 <section id="observational-designs" class="slide level2 center">
@@ -491,11 +1198,11 @@ Olgahan Çat (olgahan@brown.edu)
 <ul>
 <li class="fragment">Many social questions <strong>cannot be randomized</strong>
 <ul>
-<li class="fragment">Democracy, migration, welfare, education</li>
+<li class="fragment">Democracy, migration, political violence</li>
 </ul></li>
-<li class="fragment">Policies are <strong>not supposed to be not assigned at random</strong>
+<li class="fragment">Policies are <strong>targeted, not random</strong>
 <ul>
-<li class="fragment">Welfare is not given to the rich</li>
+<li class="fragment">Job training programs are usually offered to unemployed workers</li>
 </ul></li>
 <li class="fragment">This creates <strong>selection bias</strong></li>
 </ul>
@@ -607,6 +1314,13 @@ Olgahan Çat (olgahan@brown.edu)
 <li class="fragment">Synthetic control</li>
 <li class="fragment">Shared goal: <strong>imputing the counterfactual using appropriate the design</strong></li>
 </ul>
+</section>
+<section id="proportion-of-quantitative-political-science-papers-by-research-design" class="slide level2 center">
+<h2>Proportion of Quantitative Political Science papers by research design</h2>
+<div style="width:100%; text-align:center;">
+<p><img src="qps.png" style="width:35%;"></p>
+</div>
+<p><em>Source: Carolina Torreblanca</em></p>
 </section>
 <section id="takeaways" class="slide level2 center">
 <h2>Takeaways</h2>
@@ -849,6 +1563,44 @@ Olgahan Çat (olgahan@brown.edu)
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
