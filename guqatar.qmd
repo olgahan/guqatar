@@ -1,7 +1,9 @@
 ---
 title: "Social Data Science"
-subtitle: "Statistical Reasoning: Interpreting Patterns in Data"
-author: "Olgahan Çat (olgahan@brown.edu)"
+# subtitle: "Statistical Reasoning: Interpreting Patterns in Data"
+subtitle: "Introduction to Statistical Reasoning"
+author: "Olgahan Çat | Slides: guqatar.olgahan.com"
+
 format:
   revealjs:
     slide-number: true
@@ -15,14 +17,14 @@ format:
 
 ## Goals
 - Find out whether data **automatically** tells us what is true or not
-- Identify **patterns** in data and describe what they show
+<!-- - Identify **patterns** in data and describe what they show -->
 - Distinguish **descriptive, predictive, and causal** claims
 - Ask better questions when someone makes a **data-based claim**
 
 ## Why statistical reasoning matters?
-- **Intellectual skill:** Reason carefully about patterns in human behavior
+- **Intellectual skill:** Reason carefully about patterns in life
 - **Policy:** Evaluate evidence behind decisions that affect society
-- **Private sector & life:** Use data responsibly to anticipate outcomes
+- **Private sector:** Use data responsibly to add value
 - **Academia:** Read, interpret, and contribute to social science research
 
 ## Proportion of Political Science papers by method
@@ -32,47 +34,71 @@ format:
 
 ## Proportion of Political Science papers by method
 
-- Does not mean quant is better
-- Does not mean you have to do quant work
-- But probably means you want to learn some stats to engage with the discipline
+- **Does not mean** quantitative methods are better
+- **Does not mean** you have to use quantitative methods
+- But it is probably a good idea to learn **some statistics** to engage with the discipline
 
 
 
 ## "According to data..."
 ### Do data speak?
 
-::: columns
+![](wp.png){width=50%}
+![](s1.png){width=50%}
 
-::: {.column width="60%"}
 
-<!-- - Common claims:  -->
-<!--   - "The **data says** X causes Y" -->
-<!--   - "**According to data**, A is better than B" -->
+## "According to data..."
+### Do data speak?
+
 - Implied: data reveals objective truth
 - Reality: data **requires interpretation**
 
-:::
 
-::: {.column width="40%" .center}
-
-![](wp.png){width=100%}
-![](s1.png){width=100%}
-
-:::
-
-:::
 
 ## Variables
 
-- Characteristics that vary
+Characteristics that vary  
+<!-- ![](s2.png){width=70%} -->
 
-- ![](s2.png){width=91%}
+```{r}
 
+library(qatarcars)
+library(dplyr)
+library(tidyr)
+library(knitr)
+library(kableExtra)
+library(gapminder)  # Example international dataset
+
+#| echo: false
+
+
+# Load data and select a few columns
+ip_data <- gapminder %>%
+  filter(year >= 2007) %>%
+  select(country, continent, year, lifeExp, gdpPercap)
+
+# Take first 6 rows
+ip_head <- head(ip_data)
+
+# Display table with kableExtra styling
+ip_head %>%
+  kable(
+    caption = "",
+    col.names = c("Country", "Continent", "Year", "Life Expectancy", "GDP per Capita"),
+    booktabs = TRUE,
+    align = c("l","l","r","r","r"),
+    digits = 1
+  ) %>%
+  kable_styling(full_width = FALSE, position = "center", font_size = 30)
+
+```
+
+*Source: Gapminder Foundation*
 
 ## Types of Variables
 
 - Nominal/categorical: **Cannot be ordered** 
-  - Region, conflict types, 
+  - Region, conflict types
 - Ordinal: **Ordered**
   -  Liberal < Moderate < Conservative 
 - Numerical: Ordered + **equidistant**
@@ -106,7 +132,7 @@ format:
 
 - Counts / frequencies: How many observations fall in each category.
 - Percentages / proportions: Useful to compare groups.
-- Mode: The most common category
+- Mode: The most common category.
 
 
 
@@ -201,17 +227,17 @@ summary_tbl %>%
 
 
 ## Predictive Analysis
-### Can we forecast outcomes?
+### Can we forecast/predict outcomes?
 
 
-- Use patterns to **predict an outcome**
+- Use patterns to **predict an outcome**.
 - Example: **Next election**, would we expect a high or low turnout at a **university town?**
 
 
 
 ## Toy example
 ### New university in town
-- Suppose turnout differs by age:
+- Suppose turnout differs by age based on past data:
   - Young voters (18–25): <b>40%</b> turnout
 
 - Everyone else: <b>65%</b> turnout
@@ -267,7 +293,7 @@ summary_tbl %>%
 ### 
 - Widely used in **private sector:** credit scoring, fraud detection, demand forecasting
 - Also common in **public policy:** forecasting crime, turnout, ER visits
-- Often relies on more flexible, machine learning models
+- Uses many variables with machine learning models
 - What if we want to know <span style="color:#8B0000;">**why?**</span> 
 
 ## Causal Inference
@@ -279,12 +305,12 @@ summary_tbl %>%
 ::: {.column width="60%"}
 
 
-
-- X: Independent variable
-- Y: Dependent variable
-- Causal claims are everywhere
 - The ultimate question: 
   - **does changing X change Y?**
+- X: Independent variable
+- Y: Dependent variable
+<!-- - Causal claims are everywhere -->
+
 
   
 :::
@@ -303,12 +329,10 @@ summary_tbl %>%
 ## A Toy Example
 ### Foreign Aid and Political Stability
 
-- Some countries receive **foreign aid**
-- Others do **not**
-- Outcome: **number of anti-government protests**
-
 - **Question:**  
   - Does foreign aid reduce political unrest?
+
+- Outcome: **number of anti-government protests**
 
 ---
 
@@ -408,7 +432,7 @@ summary_tbl %>%
     });
 
     const naiveDiff = (naiveAidSum/naiveAidCount - naiveNoAidSum/naiveNoAidCount).toFixed(2);
-    document.getElementById("slide1_naive").innerText = "Naive difference (avg aid - avg no aid) = (5+6+7)/3 - (3+4+4)/3 = " + naiveDiff;
+    document.getElementById("slide1_naive").innerText = "Average protest when received aid - Average protest when no aid) = (5+6+7)/3 - (3+4+4)/3 = " + naiveDiff;
     document.getElementById("slide1_true").innerText = slide1_revealed ? "True average effect of aid = (-2-1-3-2-3-1)/6 = " + (trueSum/6).toFixed(2) : "";
   }
 
@@ -436,24 +460,46 @@ summary_tbl %>%
 ## What Might Be Going Wrong?
 ### Aid Is Not Random
 
-- Foreign aid is often sent to:
+
+
+::: columns
+
+::: {.column width="60%"}
+
+
+
+- Foreign aid might be sent to:
   - Politically unstable countries
-  - Countries already experiencing unrest
+  - Which introduces **selection bias**
+  
 - These countries would likely have **more protests anyway**
 
 - We are comparing **different kinds of countries**.
 
+  
+:::
+
+::: {.column width="40%"}
+
+![](dag.png){width=100%}
+
+:::
+
+:::
 
 
-## Selection Bias
-### When Comparison Is Misleading
 
-- Countries receiving aid are different *before* aid
-- Instability affects:
-  - Whether aid is given
-  - How many protests occur
 
-- So the difference we see may **not be caused by aid**.
+
+<!-- ## Selection Bias -->
+<!-- ### When Comparison Is Misleading -->
+
+<!-- - Countries receiving aid are different *before* aid -->
+<!-- - Instability affects: -->
+<!--   - Whether aid is given -->
+<!--   - How many protests occur -->
+
+<!-- - So the difference we see may **not be caused by aid**. -->
 
 
 
@@ -488,8 +534,8 @@ summary_tbl %>%
 <!-- - If Trump did not win 2024 elections, would Maduro still be in power?  -->
 - Effect of civil war on a country’s economic growth 
 - Whether mailers affect voting turnout or not
-- How EU ascension impacts a country’s trade imbalance
-- If it wasn’t for Qatar, would **Messi ever win the World Cup?**
+<!-- - How EU ascension impacts a country’s trade imbalance -->
+- If it wasn’t for Qatar, would **Messi win the World Cup?**
 
 
 ---
@@ -612,12 +658,12 @@ summary_tbl %>%
   slide2_update();
 </script>
 
-## Causal Inference
-### Does a change in X cause a change in Y?
+<!-- ## Causal Inference -->
+<!-- ### Does a change in X cause a change in Y? -->
 
-- Patterns alone are not enough
-  - Observations that are treated and not treated tend to be **systematically different:** <span style="color:#8B0000;">**Selection bias**</span> 
-- Without counterfactuals, it is difficult to make causal claims
+<!-- - Patterns alone are not enough -->
+<!--   - Observations that are treated and not treated tend to be **systematically different:** <span style="color:#8B0000;">**Selection bias**</span>  -->
+<!-- - Without counterfactuals, it is difficult to make causal claims -->
 
 ## 
 
@@ -650,7 +696,7 @@ summary_tbl %>%
 
 <div style="display:flex; justify-content:center; align-items:center; height:100%;">
   <h1 style="font-size:3em; text-align:center;">
-    <span style="color:#000080;">**Good news:**</span> <span style="color:#8B0000;">**we can predict them**</span> 
+    <span style="color:#000080;">**Good news:**</span> <span style="color:#8B0000;">**we can impute them**</span> 
   </h1>
 </div>
 
@@ -658,7 +704,7 @@ summary_tbl %>%
 
 <div style="display:flex; justify-content:center; align-items:center; height:100%;">
   <h1 style="font-size:3em; text-align:center;">
-    <span style="color:#000080;">**Good news:**</span> <span style="color:#8B0000;">**we can predict them**</span> 
+    <span style="color:#000080;">**Good news:**</span> <span style="color:#8B0000;">**we can impute them**</span> 
   </h1>
 </div>
 **Causal inference = imputing the counterfactual and estimating the effect**
@@ -666,7 +712,8 @@ summary_tbl %>%
 ## Imputing the counterfactual
 
 - Qualitatively
-  - Case studies
+  - Case studies and process tracing
+    - Comparing plausible alternative explanations within cases
 - Quantitatively
   - Experiments
   - Observational studies
@@ -674,14 +721,13 @@ summary_tbl %>%
   
 
 ## Experiments
-### Gold standard
-
+### Gold standard?
 
 - **Random assignment** ensures no selection bias
-- Isolate the effect of X on Y
+- Some call experiments as gold standard - we will come back to it in a minute
 
 ## Let's think about this intuitively
-### An example from a field experiment in Pakistan (Cheema et al. 2022)
+### An example from a field experiment in Pakistan (Cheema et al. 2022, APSR)
 
 
 - How can we close persistent gender gaps in political participation?
@@ -690,11 +736,10 @@ summary_tbl %>%
 - **Targeting male household members** -> increase in women’s turnout 
 
 
-## Let's think about this intuitively
-### An example from a field experiment in Pakistan (Cheema et al. 2022)
+## An example
 
 
-![](s9.png){style="width:50%; max-height:300px; display:block; margin:auto;"}
+![](s9.png){style="width:40%; max-height:300px; display:block; margin:auto;"}
 
 *Figure: A random sample of households in Pakistan*
 
@@ -708,8 +753,7 @@ summary_tbl %>%
 
 
 
-## Let's think about this intuitively
-### An example from a field experiment in Pakistan (Cheema et al. 2022)
+## An example
 
 
 ::: columns
@@ -722,6 +766,7 @@ summary_tbl %>%
 
 - When you assign a household to control, **you are realizing the household’s potential outcome under control**
 
+- With random assignment, naive comparison **approximates the actual effect.**
   
 :::
 
@@ -742,41 +787,43 @@ summary_tbl %>%
 
 <!-- *Random assignment to treated or control means **we’re drawing a random sample of these potential outcomes*** -->
 
-
-## Exercise
-
-- Asking male households how much they support women's political participation
-- 1: Not support at all
-- 5: Strongly support
-
-## Exercise
-
-- Let's assume these are the potential outcomes:
-![](s13.png){width=40%}
+<!-- xxxxxxxxxxxx-->
 
 
+<!-- ## Exercise -->
 
-## Exercise
+<!-- - Asking male households how much they support women's political participation -->
+<!-- - 1: Not support at all -->
+<!-- - 5: Strongly support -->
 
-- Let's assume these are the potential outcomes:
-![](s14.png){width=40%}
+<!-- ## Exercise -->
+
+<!-- - Let's assume these are the potential outcomes: -->
+<!-- ![](s13.png){width=40%} -->
 
 
 
-## Exercise
+<!-- ## Exercise -->
 
-- With random assignment, we realize the potential outcomes:
-  - Some households are realized as **treated**
-  - Some households are realized as **control**
-![](s15.png){width=40%}
+<!-- - Let's assume these are the potential outcomes: -->
+<!-- ![](s14.png){width=40%} -->
 
 
 
-## Exercise
+<!-- ## Exercise -->
 
-- Since we can only realize one outcome, we do not know individual causal effect
-- But we can **estimate the average treatment effect**
-![](s16.png){width=40%}
+<!-- - With random assignment, we realize the potential outcomes: -->
+<!--   - Some households are realized as **treated** -->
+<!--   - Some households are realized as **control** -->
+<!-- ![](s15.png){width=40%} -->
+
+
+
+<!-- ## Exercise -->
+
+<!-- - Since we can only realize one outcome, we do not know individual causal effect -->
+<!-- - But we can **estimate the average treatment effect** -->
+<!-- ![](s16.png){width=40%} -->
 
 
 
@@ -792,21 +839,31 @@ summary_tbl %>%
 ### Limitations
 
 - Why not run experiments for everything?
-  - **Practical constraints and feasibility:** Cost, time, scale; cannot randomly assign many social conditions
+  - **Practical constraints and feasibility:** cannot randomly assign many social conditions
   - **Ethical considerations**: Harm, consent, fairness
+- Good policies tend to be **targeted, not random**
+  - This creates **selection bias**
 
-- Of the four hypothetical research questions above (civil war, mailers, EU ascension and World Cup), only one (mailer) is amenable to randomization.
+## Revisiting our research questions
+### Can we use experiments?
+
+<!-- - If Trump did not win 2024 elections, would Maduro still be in power?  -->
+- Effect of civil war on a country’s economic growth 
+- Whether mailers affect voting turnout or not
+<!-- - How EU ascension impacts a country’s trade imbalance -->
+- If it wasn’t for Qatar, would **Messi win the World Cup?**
+
+
+- Of the hypothetical research questions above (civil war, mailers, and World Cup), **only one (mailer) is amenable to randomization.**
 
 
 
-## Observational Designs
-### When we cannot run experiments
+<!-- ## Observational Designs -->
+<!-- ### When we cannot run experiments -->
 
-- Many social questions **cannot be randomized**
-  - Democracy, migration, political violence
-- Policies are **targeted, not random**
-  - Job training programs are usually offered to unemployed workers
-- This creates **selection bias**
+<!-- - Many social questions **cannot be randomized** -->
+<!--   - Democracy, migration, political violence -->
+
 
 
 <!-- ## Observational designs -->
@@ -845,7 +902,7 @@ summary_tbl %>%
   <!-- - This helps reduce unfair comparisons -->
 
 - **Example:** Do UN peacekeeping missions reduce civilian deaths?
-  - Problem: Peacekeepers are sent to more violent conflicts
+  - Problem: Peacekeepers might be sent to more violent conflicts
   - Solution: Compare conflicts with **similar violence levels**
     - Some with peacekeepers | some without
     
@@ -854,11 +911,13 @@ summary_tbl %>%
 ### Comparing units near a cutoff
 
 - Some policies use **clear rules or thresholds**
-  - Elections, Welfare programs
+  - Welfare programs, exams
+
 - Example: **Does tutoring improve student performance?**
+    - Selection bias: Wealth, family, neighborhood
 
-- Problem: Students who do and do not get tutoring may already be different
-
+<!-- - Problem: Students who do and do not get tutoring may already be different -->
+  
 - Policy: Students scoring **70 or below** get tutoring
   - Compare students **just below and just above 70**
 
@@ -884,19 +943,22 @@ summary_tbl %>%
 ### Comparing changes over time
 
 - **Idea:**
-  - Compare how outcomes **change over time** between a treated group and a similar control group
+  <!-- - Compare how outcomes **change over time** between a treated group and a similar control group -->
   - Focus on differences in **trends**, not levels
-
-## Difference in Differences
-### Comparing changes over time
-
 - **Example:** How do sanctions affect human rights violations?
-  - Two countries:
-    - One sanctioned (treated)
-    - One not sanctioned (control)
-  - Key assumption:
-    - Both countries followed **similar trends before** sanctions
+  - Two countries: One sanctioned (treated), one not sanctioned (control)
+  - Key assumption: Both countries followed **similar trends before** sanctions
     
+<!-- ## Difference in Differences -->
+<!-- ### Comparing changes over time -->
+
+<!-- - **Example:** How do sanctions affect human rights violations? -->
+<!--   - Two countries: -->
+<!--     - One sanctioned (treated) -->
+<!--     - One not sanctioned (control) -->
+<!--   - Key assumption: -->
+<!--     - Both countries followed **similar trends before** sanctions -->
+
     
 ## Difference in Differences
 ### Compare units that follow similar trends the treatment
@@ -909,7 +971,7 @@ summary_tbl %>%
 
 - Instrumental variable
 - Synthetic control
-- Shared goal: **imputing the counterfactual using appropriate the design**
+- Shared goal: **imputing the counterfactual using the appropriate design**
 
 ## Proportion of Quantitative Political Science papers by research design
 
@@ -920,19 +982,36 @@ summary_tbl %>%
 
 *Source: Carolina Torreblanca*
 
+## Last but not least
+### Sample effect $\neq$ Population effect
+
+- We almost always study a sample, **not the whole population**
+- A sample might look different from the full population
+- Statistics gives us tools to estimate population patterns and **measure uncertainty**
+
+## Last but not least
+### Data work requires computation
+
+- Computers do the work for us
+- Learning some **programming** is unavoidable (R, Python, Stata)
+- Luckily, LLMs (ChatGPT, Claude) **lower the learning curve**
+- Use with care: **they can be confidently wrong**
+
+
 ## Takeaways
-### Why statistics matters
+### Why statistics matters?
 
 - Data don’t speak for themselves: they are produced, measured, and **interpreted by humans.**
-- Statistical reasoning is **powerful:** bad data, poor comparisons, or **naive interpretation can mislead.**
+- Statistical reasoning is **powerful:**  naive interpretation can **mislead.**
+- **Analytical caution is a marketable skill anywhere data are used:** policy, social science literacy, private sector, real-world decision-making. 
+<!-- bad data, poor comparisons, or -->
 
+<!-- ## Takeaways -->
+<!-- ### Why learn? -->
 
-## Takeaways
-### Why learn?
-
-- **Policy relevance:** make sense of interventions and their consequences.
-- **Social science literacy:** read and critique academic research confidently.
-- **Real-world decision-making:** informed skepticism is a marketable skill anywhere data are used.
+<!-- - **Policy relevance:** make sense of interventions and their consequences. -->
+<!-- - **Social science literacy:** read and critique academic research confidently. -->
+<!-- - **Real-world decision-making:** analytical caution is a marketable skill anywhere data are used. -->
 
 ## Thank You
 ### Questions & Discussion
