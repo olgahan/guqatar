@@ -34,9 +34,13 @@ format:
 
 ## Proportion of Political Science papers by method
 
-- **Does not mean** quantitative methods are better
-- **Does not mean** you have to use quantitative methods
-- But it is probably a good idea to learn **some statistics** to engage with the discipline
+- Political science is **methodologically pluralistic**
+- You don’t have to *use* quantitative methods to benefit from them
+- Statistics helps you **interpret evidence** and **engage with the broader literature**
+
+<!-- - **Does not mean** quantitative methods are better -->
+<!-- - **Does not mean** you have to use quantitative methods -->
+<!-- - But learning **some statistics** is helpful to engage with the discipline -->
 
 
 
@@ -54,8 +58,8 @@ format:
 - Reality: data **requires interpretation**
 
 
-
-## Variables
+## What data look like?
+### Variables
 
 Characteristics that vary  
 <!-- ![](s2.png){width=70%} -->
@@ -294,7 +298,7 @@ summary_tbl %>%
 - Widely used in **private sector:** credit scoring, fraud detection, demand forecasting
 - Also common in **public policy:** forecasting crime, turnout, ER visits
 - Uses many variables with machine learning models
-- What if we want to know <span style="color:#8B0000;">**why?**</span> 
+- What if we ask a <span style="color:#8B0000;">**causal question?**</span> 
 
 ## Causal Inference
 ### Going beyond associations
@@ -529,13 +533,15 @@ summary_tbl %>%
 
 
 ## Counterfactuals
-### Hypothetical research questions
+### Causal claims
 
+- Countries **that receive aid** have more protests.
 <!-- - If Trump did not win 2024 elections, would Maduro still be in power?  -->
-- Effect of civil war on a country’s economic growth 
-- Whether mailers affect voting turnout or not
+- Countries **that experience civil wars** have lower economic growth
+- People **who receive encouraging mailers** are more likely to vote
 <!-- - How EU ascension impacts a country’s trade imbalance -->
-- If it wasn’t for Qatar, would **Messi win the World Cup?**
+- Messi won the World Cup thanks to the **host country.**
+<!-- If it wasn’t for Qatar, would **Messi win the World Cup?** -->
 
 
 ---
@@ -713,7 +719,7 @@ summary_tbl %>%
 
 - Qualitatively
   - Case studies and process tracing
-    - Comparing plausible alternative explanations within cases
+
 - Quantitatively
   - Experiments
   - Observational studies
@@ -724,7 +730,7 @@ summary_tbl %>%
 ### Gold standard?
 
 - **Random assignment** ensures no selection bias
-- Some call experiments as gold standard - we will come back to it in a minute
+- Some consider experiments gold standard - we will come back to it in a minute
 
 ## Let's think about this intuitively
 ### An example from a field experiment in Pakistan (Cheema et al. 2022, APSR)
@@ -732,51 +738,36 @@ summary_tbl %>%
 
 - How can we close persistent gender gaps in political participation?
    - Male household members as **“gatekeepers” of women’s participation**
-- Targeting women -> no effect
-- **Targeting male household members** -> increase in women’s turnout 
+- Canvassing women -> no effect
+- **Canvassing male household members** -> increase in women’s turnout 
 
 
-## An example
+## Example
 
+::: {.columns}
 
-![](s9.png){style="width:40%; max-height:300px; display:block; margin:auto;"}
+::: {.column width="45%"}
+![](s9.png){style="width:100%; max-height:300px; display:block; margin:auto;"}
+:::
+
+::: {.column width="10%"}
+<div class="fragment" style="text-align:center; font-size:2em; margin-top:120px;">
+→
+</div>
+:::
+
+::: {.column width="45%"}
+<div class="fragment">
+![](s11.png){style="width:100%; max-height:300px; display:block; margin:auto;"}
+</div>
+:::
+
+:::
 
 *Figure: A random sample of households in Pakistan*
 
 
-<!-- ## Let's think about this intuitively -->
-<!-- ### An example from a field experiment in Pakistan (Cheema et al. 2022) -->
 
-<!-- ![](s10.png){style="width:50%; max-height:300px; display:block; margin:auto;"} -->
-
-<!-- *Figure: Each household has potential outcomes <span style="color:#8B0000;">**treated**</span>  and <span style="color:#000080;">**control**</span> * -->
-
-
-
-## An example
-
-
-::: columns
-
-::: {.column width="60%"}
-
-
-
-- When you assign a household to treated, **you are realizing the household’s potential outcome under treatment**
-
-- When you assign a household to control, **you are realizing the household’s potential outcome under control**
-
-- With random assignment, naive comparison **approximates the actual effect.**
-  
-:::
-
-::: {.column width="40%" .center}
-
-![](s11.png){width=80%}
-
-:::
-
-:::
 
 <!-- ## Let's think about this intuitively -->
 <!-- ### An example from a field experiment in Pakistan (Cheema et al. 2022) -->
@@ -839,7 +830,7 @@ summary_tbl %>%
 ### Limitations
 
 - Why not run experiments for everything?
-  - **Practical constraints and feasibility:** cannot randomly assign many social conditions
+  - **Feasibility:** cannot randomly assign many social conditions
   - **Ethical considerations**: Harm, consent, fairness
 - Good policies tend to be **targeted, not random**
   - This creates **selection bias**
@@ -901,9 +892,9 @@ summary_tbl %>%
 - **Idea:** Compare units that are **similar in important ways**, except for whether they received the treatment
   <!-- - This helps reduce unfair comparisons -->
 
-- **Example:** Do UN peacekeeping missions reduce civilian deaths?
-  - Problem: Peacekeepers might be sent to more violent conflicts
-  - Solution: Compare conflicts with **similar violence levels**
+- **Example:** Do UN PK missions reduce civilian deaths?
+  - Selection Bias: PKs might be sent to **more violent conflicts**
+  - Solution: Compare **similarly violent conflicts**
     - Some with peacekeepers | some without
     
     
@@ -969,8 +960,7 @@ summary_tbl %>%
 
 ## Other designs for observational data
 
-- Instrumental variable
-- Synthetic control
+- Instrumental variable, synthetic control
 - Shared goal: **imputing the counterfactual using the appropriate design**
 
 ## Proportion of Quantitative Political Science papers by research design
@@ -982,11 +972,11 @@ summary_tbl %>%
 
 *Source: Carolina Torreblanca*
 
-## Last but not least
+## Second-last but not least
 ### Sample effect $\neq$ Population effect
 
 - We almost always study a sample, **not the whole population**
-- A sample might look different from the full population
+- A sample might look different from the population
 - Statistics gives us tools to estimate population patterns and **measure uncertainty**
 
 ## Last but not least
@@ -999,7 +989,7 @@ summary_tbl %>%
 
 
 ## Takeaways
-### Why statistics matters?
+<!-- ### Why statistics matters? -->
 
 - Data don’t speak for themselves: they are produced, measured, and **interpreted by humans.**
 - Statistical reasoning is **powerful:**  naive interpretation can **mislead.**
@@ -1017,4 +1007,5 @@ summary_tbl %>%
 ### Questions & Discussion
 
 - Thank you for your attention!
-- Feedback, questions, connections: **olgahan@brown.edu**
+
+- **olgahan@brown.edu**

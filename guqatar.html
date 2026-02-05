@@ -131,7 +131,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Social Data Science</h1>
-  <p class="subtitle">Statistical Reasoning: Interpreting Patterns in Data</p>
+  <p class="subtitle">Introduction to Statistical Reasoning</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -166,10 +166,13 @@ Olgahan Çat | Slides: guqatar.olgahan.com
 <section id="proportion-of-political-science-papers-by-method-1" class="slide level2 center">
 <h2>Proportion of Political Science papers by method</h2>
 <ul>
-<li class="fragment"><strong>Does not mean</strong> quantitative methods are better</li>
-<li class="fragment"><strong>Does not mean</strong> you have to use quantitative methods</li>
-<li class="fragment">But it is probably a good idea to learn <strong>some statistics</strong> to engage with the discipline</li>
+<li class="fragment">Political science is <strong>methodologically pluralistic</strong></li>
+<li class="fragment">You don’t have to <em>use</em> quantitative methods to benefit from them</li>
+<li class="fragment">Statistics helps you <strong>interpret evidence</strong> and <strong>engage with the broader literature</strong></li>
 </ul>
+<!-- - **Does not mean** quantitative methods are better -->
+<!-- - **Does not mean** you have to use quantitative methods -->
+<!-- - But learning **some statistics** is helpful to engage with the discipline -->
 </section>
 <section id="according-to-data" class="slide level2 center">
 <h2>“According to data…”</h2>
@@ -184,8 +187,9 @@ Olgahan Çat | Slides: guqatar.olgahan.com
 <li class="fragment">Reality: data <strong>requires interpretation</strong></li>
 </ul>
 </section>
-<section id="variables" class="slide level2 center">
-<h2>Variables</h2>
+<section id="what-data-look-like" class="slide level2 center">
+<h2>What data look like?</h2>
+<h3 id="variables">Variables</h3>
 <p>Characteristics that vary<br>
 <!-- ![](s2.png){width=70%} --></p>
 <div class="cell">
@@ -547,7 +551,7 @@ Olgahan Çat | Slides: guqatar.olgahan.com
 <li class="fragment">Widely used in <strong>private sector:</strong> credit scoring, fraud detection, demand forecasting</li>
 <li class="fragment">Also common in <strong>public policy:</strong> forecasting crime, turnout, ER visits</li>
 <li class="fragment">Uses many variables with machine learning models</li>
-<li class="fragment">What if we want to know <span style="color:#8B0000;"><strong>why?</strong></span></li>
+<li class="fragment">What if we ask a <span style="color:#8B0000;"><strong>causal question?</strong></span></li>
 </ul>
 </section>
 <section id="causal-inference" class="slide level2 center">
@@ -844,12 +848,12 @@ F
 </section>
 <section id="counterfactuals" class="slide level2 center">
 <h2>Counterfactuals</h2>
-<h3 id="hypothetical-research-questions">Hypothetical research questions</h3>
-<!-- - If Trump did not win 2024 elections, would Maduro still be in power?  -->
+<h3 id="causal-claims">Causal claims</h3>
 <ul>
-<li class="fragment">Effect of civil war on a country’s economic growth</li>
-<li class="fragment">Whether mailers affect voting turnout or not <!-- - How EU ascension impacts a country’s trade imbalance --></li>
-<li class="fragment">If it wasn’t for Qatar, would <strong>Messi win the World Cup?</strong></li>
+<li class="fragment">Countries <strong>that receive aid</strong> have more protests. <!-- - If Trump did not win 2024 elections, would Maduro still be in power?  --></li>
+<li class="fragment">Countries <strong>that experience civil wars</strong> have lower economic growth</li>
+<li class="fragment">People <strong>who receive encouraging mailers</strong> are more likely to vote <!-- - How EU ascension impacts a country’s trade imbalance --></li>
+<li class="fragment">Messi won the World Cup thanks to the <strong>host country.</strong> <!-- If it wasn’t for Qatar, would **Messi win the World Cup?** --></li>
 </ul>
 </section>
 <section id="interactive-intuition" class="slide level2 center">
@@ -1120,10 +1124,7 @@ F
 <ul>
 <li class="fragment">Qualitatively
 <ul>
-<li class="fragment">Case studies and process tracing
-<ul>
-<li class="fragment">Comparing plausible alternative explanations within cases</li>
-</ul></li>
+<li class="fragment">Case studies and process tracing</li>
 </ul></li>
 <li class="fragment">Quantitatively
 <ul>
@@ -1137,7 +1138,7 @@ F
 <h3 id="gold-standard">Gold standard?</h3>
 <ul>
 <li class="fragment"><strong>Random assignment</strong> ensures no selection bias</li>
-<li class="fragment">Some call experiments as gold standard - we will come back to it in a minute</li>
+<li class="fragment">Some consider experiments gold standard - we will come back to it in a minute</li>
 </ul>
 </section>
 <section id="lets-think-about-this-intuitively" class="slide level2 center">
@@ -1148,31 +1149,25 @@ F
 <ul>
 <li class="fragment">Male household members as <strong>“gatekeepers” of women’s participation</strong></li>
 </ul></li>
-<li class="fragment">Targeting women -&gt; no effect</li>
-<li class="fragment"><strong>Targeting male household members</strong> -&gt; increase in women’s turnout</li>
+<li class="fragment">Canvassing women -&gt; no effect</li>
+<li class="fragment"><strong>Canvassing male household members</strong> -&gt; increase in women’s turnout</li>
 </ul>
 </section>
-<section id="an-example" class="slide level2 center">
-<h2>An example</h2>
-<p><img data-src="s9.png" style="width:40%; max-height:300px; display:block; margin:auto;"></p>
-<p><em>Figure: A random sample of households in Pakistan</em></p>
-<!-- ## Let's think about this intuitively -->
-<!-- ### An example from a field experiment in Pakistan (Cheema et al. 2022) -->
-<!-- ![](s10.png){style="width:50%; max-height:300px; display:block; margin:auto;"} -->
-<!-- *Figure: Each household has potential outcomes <span style="color:#8B0000;">**treated**</span>  and <span style="color:#000080;">**control**</span> * -->
-</section>
-<section id="an-example-1" class="slide level2 center">
-<h2>An example</h2>
+<section id="example" class="slide level2 center">
+<h2>Example</h2>
 <div class="columns">
-<div class="column" style="width:60%;">
-<ul>
-<li class="fragment"><p>When you assign a household to treated, <strong>you are realizing the household’s potential outcome under treatment</strong></p></li>
-<li class="fragment"><p>When you assign a household to control, <strong>you are realizing the household’s potential outcome under control</strong></p></li>
-<li class="fragment"><p>With random assignment, naive comparison <strong>approximates the actual effect.</strong></p></li>
-</ul>
-</div><div class="column center" style="width:40%;">
-<p><img data-src="s11.png" style="width:80.0%"></p>
+<div class="column" style="width:45%;">
+<p><img data-src="s9.png" style="width:100%; max-height:300px; display:block; margin:auto;"></p>
+</div><div class="column" style="width:10%;">
+<div class="fragment" style="text-align:center; font-size:2em; margin-top:120px;">
+<p>→</p>
+</div>
+</div><div class="column" style="width:45%;">
+<div class="fragment">
+<p><img data-src="s11.png" style="width:100%; max-height:300px; display:block; margin:auto;"></p>
+</div>
 </div></div>
+<p><em>Figure: A random sample of households in Pakistan</em></p>
 <!-- ## Let's think about this intuitively -->
 <!-- ### An example from a field experiment in Pakistan (Cheema et al. 2022) -->
 <!-- ![](s12.png){width=40%} -->
@@ -1210,7 +1205,7 @@ F
 <ul>
 <li class="fragment">Why not run experiments for everything?
 <ul>
-<li class="fragment"><strong>Practical constraints and feasibility:</strong> cannot randomly assign many social conditions</li>
+<li class="fragment"><strong>Feasibility:</strong> cannot randomly assign many social conditions</li>
 <li class="fragment"><strong>Ethical considerations</strong>: Harm, consent, fairness</li>
 </ul></li>
 <li class="fragment">Good policies tend to be <strong>targeted, not random</strong>
@@ -1259,10 +1254,10 @@ F
 <h3 id="comparing-similar-units">Comparing similar units</h3>
 <ul>
 <li class="fragment"><p><strong>Idea:</strong> Compare units that are <strong>similar in important ways</strong>, except for whether they received the treatment <!-- - This helps reduce unfair comparisons --></p></li>
-<li class="fragment"><p><strong>Example:</strong> Do UN peacekeeping missions reduce civilian deaths?</p>
+<li class="fragment"><p><strong>Example:</strong> Do UN PK missions reduce civilian deaths?</p>
 <ul>
-<li class="fragment">Problem: Peacekeepers might be sent to more violent conflicts</li>
-<li class="fragment">Solution: Compare conflicts with <strong>similar violence levels</strong>
+<li class="fragment">Selection Bias: PKs might be sent to <strong>more violent conflicts</strong></li>
+<li class="fragment">Solution: Compare <strong>similarly violent conflicts</strong>
 <ul>
 <li class="fragment">Some with peacekeepers | some without</li>
 </ul></li>
@@ -1336,8 +1331,7 @@ F
 <section id="other-designs-for-observational-data" class="slide level2 center">
 <h2>Other designs for observational data</h2>
 <ul>
-<li class="fragment">Instrumental variable</li>
-<li class="fragment">Synthetic control</li>
+<li class="fragment">Instrumental variable, synthetic control</li>
 <li class="fragment">Shared goal: <strong>imputing the counterfactual using the appropriate design</strong></li>
 </ul>
 </section>
@@ -1348,16 +1342,16 @@ F
 </div>
 <p><em>Source: Carolina Torreblanca</em></p>
 </section>
-<section id="last-but-not-least" class="slide level2 center">
-<h2>Last but not least</h2>
+<section id="second-last-but-not-least" class="slide level2 center">
+<h2>Second-last but not least</h2>
 <h3 id="sample-effect-neq-population-effect">Sample effect <span class="math inline">\(\neq\)</span> Population effect</h3>
 <ul>
 <li class="fragment">We almost always study a sample, <strong>not the whole population</strong></li>
-<li class="fragment">A sample might look different from the full population</li>
+<li class="fragment">A sample might look different from the population</li>
 <li class="fragment">Statistics gives us tools to estimate population patterns and <strong>measure uncertainty</strong></li>
 </ul>
 </section>
-<section id="last-but-not-least-1" class="slide level2 center">
+<section id="last-but-not-least" class="slide level2 center">
 <h2>Last but not least</h2>
 <h3 id="data-work-requires-computation">Data work requires computation</h3>
 <ul>
@@ -1369,7 +1363,7 @@ F
 </section>
 <section id="takeaways" class="slide level2 center">
 <h2>Takeaways</h2>
-<h3 id="why-statistics-matters">Why statistics matters?</h3>
+<!-- ### Why statistics matters? -->
 <ul>
 <li class="fragment">Data don’t speak for themselves: they are produced, measured, and <strong>interpreted by humans.</strong></li>
 <li class="fragment">Statistical reasoning is <strong>powerful:</strong> naive interpretation can <strong>mislead.</strong></li>
@@ -1385,8 +1379,8 @@ F
 <h2>Thank You</h2>
 <h3 id="questions-discussion">Questions &amp; Discussion</h3>
 <ul>
-<li class="fragment">Thank you for your attention!</li>
-<li class="fragment">Feedback, questions, connections: <strong>olgahan@brown.edu</strong></li>
+<li class="fragment"><p>Thank you for your attention!</p></li>
+<li class="fragment"><p><strong>olgahan@brown.edu</strong></p></li>
 </ul>
 
 </section>
